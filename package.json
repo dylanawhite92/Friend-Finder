@@ -1,0 +1,27 @@
+{
+  "name": "Friend-Finder",
+  "version": "1.0.0",
+  "description": "Homework 11",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/narwhalnancy/Friend-Finder.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/narwhalnancy/Friend-Finder/issues"
+  },
+  "homepage": "https://github.com/narwhalnancy/Friend-Finder#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "mysql": "^2.16.0",
+    "path": "^0.12.7"
+  }
+}
