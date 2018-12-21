@@ -1,20 +1,17 @@
 // Dependencies
 var express = require("express");
 var path = require("path");
-var bodyParser = require("body-parser");
 
+// Set up Express.js and set port
 var app = express();
-
-// Set port for app
 var PORT = process.env.port || 8080;
 
-// Exposes public directory
-app.use(express.static(path.join(__dirname, "./app/public")));
+// Use express.static to serve static content for app from the "public" directory in the application directory.
+app.use(express.static("public"));
 
-// Parses incoming requests 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: true}));
-app.use(bodyParser.text());
+// Sets up the Express app to handle data parsing
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 // Routes
 require(path.join(__dirname, "./app/routing/htmlRoutes"))(app);
