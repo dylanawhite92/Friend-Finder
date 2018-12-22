@@ -12,17 +12,27 @@ else {
         port: 8889,
         user: "root",
         password: "root",
-        database: "YOURDBNAME"
+        database: "friends_db"
 });
 }
 
 connection.connect(function(err) {
     if (err) {
-    console.error("error connecting: " + err.stack);
+    console.error(`Error connecting: ${err.stack}`);
     //once successfully connected, you may want to query your database for the info you'll need later!
     }
+
+    console.log(`Connected as ID: ${connection.threadId}`);
 });
 
-app.get("/api/friends")
+module.exports = function(app) {
 
-app.post("/api/friends")
+    app.get("/api/friends", function(req, res) {
+        console.log(req);
+        console.log(res);
+    });
+
+    app.post("/api/friends", function(req, res) {
+        res.json(req.body);
+    });
+};
